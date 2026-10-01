@@ -151,12 +151,7 @@ model = FNO.from_checkpoint(ckpt.parent, ckpt.stem, map_location="cuda")
 - `configs/section2_laminar_32.yaml` — laminar variant (`velocity_kmax = 8`).
 - `configs/curved_32.yaml` — 5000 PDEs with random trig-polynomial
   boundaries, `f^{-1}` fed as an extra input channel (Section 5.2).
-
-### Evaluate (work-in-progress)
-
-`neuropaths-evaluate --config <yaml>` is there as structure but not yet
-ported (see `cli/evaluate.py`); for now, use the two helper scripts
-described below to inspect a trained run.
+  
 
 ### Pulling code over from Avon
 
@@ -222,36 +217,6 @@ uv run python scripts/inference_demo.py \
 The script prints per-sample relative L2 and mean absolute error so
 you can compare to the train/val numbers from the training curve.
 
-### Zero-shot super-resolution evaluation
-
-`scripts/super_resolution_eval.py` reproduces the dissertation's
-Table 1: train at one grid `s`, evaluate at every `s'` in
-`cfg.eval.test_resolutions` without retraining. The FNO's
-discretisation invariance means the same weights apply at any
-`s' ≥ 2 · n_modes`; for `s' < 2 · n_modes` neuralop silently
-truncates the spectral coefficients (so a `n_modes=12` model can be
-evaluated at 16 — only 9 modes are usable, the rest are zeroed).
-
-```bash
-uv run python scripts/super_resolution_eval.py --config configs/square_32.yaml --num-workers 8
-```
-
-For each resolution it generates `runs/<name>/eval/super_res_test_<G>.csv`
-on a fresh seed band (offset from train and val so draws are disjoint),
-loads the train-time normalisation stats, runs the model, and prints:
-
-```
-   grid |     N |   global rel L2 |   per-sample mean |        MSE |        MAE
-     16 |  1000 |          ...    |               ... |         ... |        ...
-     32 |  1000 |          ...    |               ... |         ... |        ...
-     63 |  1000 |          ...    |               ... |         ... |        ...
-```
-
-Rejection sampling is *disabled* during super-res generation so all
-three resolutions see the same underlying PDEs — this makes the rows
-directly comparable. The FD solve is the cost driver (~2 s/PDE at
-fine_grid=311 on a single core), so locally use `--num-workers 8`.
-Pass `--regenerate` to rebuild the CSVs (otherwise they're cached).
 
 ## Running on Avon / Blythe (SLURM)
 
@@ -340,7 +305,7 @@ The velocity-field Fourier-mode cap `pde.velocity_kmax` switches
 between the two regimes of `Operator_learning_chapter.pdf` §2.4:
 
 - `configs/square_32.yaml` — `velocity_kmax: 8` (laminar)
-- `configs/square_32_turbulent.yaml` — `velocity_kmax: 16` (turbulent)
+- `configs/square_32_turbulent.yaml` — `velocity_kmax: 32` (turbulent)
 
 Same architecture and training schedule in both, only the velocity
 spectrum differs. Output directories don't collide
@@ -371,14 +336,6 @@ sacct -u maskbg
 There are two files in slurm/logs that record the progress and status for each run. You can look at these to see how things
 are going.
 
-## Status: square-domain baseline
-
-`configs/square_32.yaml` (32×32 coarse grid, 5000 train + 1000 test,
-50 epochs on a single Avon RTX 6000) reaches **global rel L2 = 0.401**
-on the val set.
-
-![inference example](runs/square_32/inference_demo.png)
-
 Reproduce locally:
 
 ```bash
@@ -388,15 +345,6 @@ uv run python scripts/plot_training_curve.py slurm/logs/neuropaths-train-<jobid>
 uv run python scripts/inference_demo.py --config configs/square_32.yaml
 ```
 
-TODO
-
-- Curved-domain experiment (`configs/curved_32.yaml`) needs the
-  `f^{-1}` channel at inference and an `inverse_map` smoke test.
-- Architectural knobs the fno-explained.pdf audit flagged that we did
-  not enable: anisotropic modes `(8, 12)`, `norm="instance_norm"`,
-  `channel_mlp_dropout`.
-- Port `neuropaths-evaluate` so this table can be regenerated from a
-  saved checkpoint without `_final_eval` being inlined in the trainer.
 
 ## Tests
 
