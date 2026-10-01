@@ -16,8 +16,6 @@ reactive trajectory density. The pipeline is:
    subsample to a coarse grid (16/32/63), write a CSV.
 2. **Train**: fit `neuralop.models.FNO` to the (b → rho_react) map with
    the relative-L2 loss (`neuralop.LpLoss`).
-3. **Evaluate**: zero-shot super-resolution at the other grid sizes
-   (Table 1 of the dissertation).
 
 ## Layout
 
@@ -132,6 +130,9 @@ from neuralop.models import FNO
 ckpt = Path("runs/square_32/fno2d.pth")
 model = FNO.from_checkpoint(ckpt.parent, ckpt.stem, map_location="cuda")
 ```
+
+The default option is to train for the product of $q^+$ and $q^-$. To train separately, change the 
+output to be q_plus/q_minus in src/neuropaths/data/generator.py
 
 ### Available configs
 
