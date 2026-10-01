@@ -1,0 +1,2 @@
+[2026-07-09T16:56:21+01:00] host=gpu013.avon.hpc cpus=10 gpu=GPU 0: Quadro RTX 6000 (UUID: GPU-ffacdf22-378d-e99c-bf90-b47d44a37b67) config=configs/square_32.yaml
+Using device: cuda:0 (Quadro RTX 6000)

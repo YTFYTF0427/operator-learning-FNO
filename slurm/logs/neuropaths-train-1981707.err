@@ -1,0 +1,10 @@
+/gpfs/home/maths/markhd/neuropaths/.venv/lib/python3.13/site-packages/tensorly/solvers/nnls.py:103: SyntaxWarning: invalid escape sequence '\l'
+  .. math:: \lambda_s, \lambda_r
+/gpfs/home/maths/markhd/neuropaths/.venv/lib/python3.13/site-packages/tensorly/solvers/admm.py:99: SyntaxWarning: invalid escape sequence '\_'
+  .. math:: dual\_var = dual\_var + (Ax + Bx_{split} - c)
+/gpfs/home/maths/markhd/neuropaths/.venv/lib/python3.13/site-packages/torch/nn/modules/module.py:1787: UserWarning: FNO.forward() received unexpected keyword arguments: ['y']. These arguments will be ignored.
+  return forward_call(*args, **kwargs)
+/gpfs/home/maths/markhd/neuropaths/.venv/lib/python3.13/site-packages/neuralop/training/trainer.py:536: UserWarning: H1Loss.__call__() received unexpected keyword arguments: ['x']. These arguments will be ignored.
+  loss += training_loss(out, **sample)
+/gpfs/home/maths/markhd/neuropaths/.venv/lib/python3.13/site-packages/neuralop/training/trainer.py:581: UserWarning: LpLoss.__call__() received unexpected keyword arguments: ['x']. These arguments will be ignored.
+  val_loss = loss(out, **sample)

@@ -1,0 +1,50 @@
+# Curved-domain experiment (dissertation Section 5.2, Table 2, Figure 10).
+# 5000 solutions, 32x32 grid, adds f^{-1} as a fifth input channel, uses
+# the hyperparameters from the dissertation's "increased complexity" run:
+# k_max = 16, d_c = 256, batch size 64 (then 32 for the 5000-sample run),
+# 80 epochs for the bigger dataset.
+
+name: curved_32
+output_dir: runs/curved_32
+
+pde:
+  fine_grid: 311
+  coarse_grid: 32
+  reynolds: 10.0
+  char_length: 0.2
+  viscosity: 1.0
+  domain: curved        # random trig-polynomial phi, psi (Algorithm 1)
+  boundary_n_max: 8
+  boundary_eps: 0.1
+  eps_1: 0.25           # epsilon-neighbourhood padding for turbulence
+  eps_2: 0.25
+
+data:
+  num_train_solutions: 5000
+  num_test_solutions: 200
+  train_csv: runs/curved_32/train.csv
+  test_csv:  runs/curved_32/test.csv
+  include_finv_column: true     # extra input channel f^{-1}
+  batch_size: 32                # 64 for the 1000-sample sweep in Table 2
+  seed: 2203_2025
+
+model:
+  in_channels: 3        # (b1, b2, f^{-1}); neuralop adds (x, y) via grid embedding
+  out_channels: 1
+  modes: 16
+  width: 256
+  depth: 4
+  projection_hidden: 256
+  activation: gelu
+
+train:
+  epochs: 80
+  lr: 0.001
+  loss: relative_l2
+  checkpoint_path: runs/curved_32/fno2d.pth
+
+eval:
+  checkpoint_path: runs/curved_32/fno2d.pth
+  output_dir: runs/curved_32/eval
+  test_resolutions: [16, 32, 63]
+  num_plot_samples: 3

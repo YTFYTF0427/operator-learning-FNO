@@ -1,0 +1,8 @@
+[2026-07-28T22:01:50+01:00] host=node027.avon.hpc cpus=48 config=configs/square_32.yaml
+[2026-07-28T22:01:50+01:00] === generate train split ===
+[train] rejection: 14000/14000 accepted (rho_min_max=0.05, rho_min_l2=0); 0 discarded as no-transition or near-degenerate draws.
+Wrote runs/square_32/train.csv
+[2026-07-28T22:20:41+01:00] === generate test split ===
+[test] rejection: 1000/1000 accepted (rho_min_max=0.05, rho_min_l2=0); 0 discarded as no-transition or near-degenerate draws.
+Wrote runs/square_32/test.csv
+[2026-07-28T22:22:21+01:00] === generation done ===

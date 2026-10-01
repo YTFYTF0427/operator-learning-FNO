@@ -1,0 +1,59 @@
+# Section-2 laminar-flow experiment (notes chapter §2.4, first test).
+#
+# This is the "smallest / fastest" instance of the Section-2 sweep
+# (laminar k_max=8; the turbulent sibling uses k_max=16). Spec traced
+# in EXPERIMENT_PLAN.md. See the "Judgement calls" section there for
+# the three places the notes chapter is under-specified (N_s, activation,
+# Reynolds).
+
+name: section2_laminar_32
+output_dir: runs/section2_laminar_32
+
+pde:
+  fine_grid: 311                  # §2.3.2 explicit
+  coarse_grid: 32                 # §2.3.2 explicit
+  reynolds: 10.0                  # dissertation §4.2.2 (notes silent)
+  char_length: 0.2
+  viscosity: 1.0
+  domain: square                  # phi = 0, psi = 1
+  eps_1: 0.0
+  eps_2: 0.0
+  velocity_kmax: 8                # §2.4 "restrict maximum Fourier mode … to 8"
+  velocity_kmin: 1
+  boundary_n_max: 8               # unused for square domain
+  boundary_eps: 0.1               # unused for square domain
+
+data:
+  num_train_solutions: 1000       # dissertation square baseline; notes ambiguous
+  num_test_solutions: 200
+  train_csv: runs/section2_laminar_32/train.csv
+  test_csv:  runs/section2_laminar_32/test.csv
+  include_finv_column: false
+  batch_size: 32
+  num_workers: 0
+  seed: 2203_2025
+
+model:
+  in_channels: 2                  # (b1, b2); neuralop adds (x, y) via grid embedding
+  out_channels: 1
+  modes: 12
+  width: 128
+  depth: 4
+  projection_hidden: 128
+  activation: gelu                # notes say ReLU; using GELU per memo
+
+train:
+  epochs: 100
+  lr: 0.001
+  weight_decay: 0.0
+  loss: relative_l2
+  scheduler: none
+  checkpoint_path: runs/section2_laminar_32/fno2d.pth
+  device: auto
+  deterministic: false
+
+eval:
+  checkpoint_path: runs/section2_laminar_32/fno2d.pth
+  output_dir: runs/section2_laminar_32/eval
+  test_resolutions: [16, 32, 63]
+  num_plot_samples: 3

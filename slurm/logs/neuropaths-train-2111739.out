@@ -1,0 +1,855 @@
+[2026-06-26T02:50:58+01:00] host=gpu006.avon.hpc cpus=10 gpu=GPU 0: Quadro RTX 6000 (UUID: GPU-0cc7189b-40c8-b82b-b38b-e38bacd0a3f1) config=configs/square_32.yaml
+Using device: cuda:0 (Quadro RTX 6000)
+Input channel stats (train): mean=[-0.03654951602220535, -0.0019145101541653275], std=[17.59725570678711, 17.754728317260742]
+Training on 7000 samples
+Testing on [500] samples         on resolutions ['val'].
+Raw outputs of shape torch.Size([32, 1, 32, 32])
+[0] time=6.22, avg_loss=0.8103, train_err=25.8997
+Eval: val_l2=0.8057
+[Rank 0]: saved training state to runs/square_32/_best
+[1] time=5.66, avg_loss=0.6963, train_err=22.2573
+Eval: val_l2=0.6296
+[Rank 0]: saved training state to runs/square_32/_best
+[2] time=5.66, avg_loss=0.5539, train_err=17.7033
+Eval: val_l2=0.4959
+[Rank 0]: saved training state to runs/square_32/_best
+[3] time=5.65, avg_loss=0.4775, train_err=15.2635
+Eval: val_l2=0.4020
+[Rank 0]: saved training state to runs/square_32/_best
+[4] time=5.64, avg_loss=0.4035, train_err=12.8969
+Eval: val_l2=0.3471
+[Rank 0]: saved training state to runs/square_32/_best
+[5] time=5.64, avg_loss=0.3535, train_err=11.2980
+Eval: val_l2=0.2989
+[Rank 0]: saved training state to runs/square_32/_best
+[6] time=5.64, avg_loss=0.3106, train_err=9.9279
+Eval: val_l2=0.2771
+[Rank 0]: saved training state to runs/square_32/_best
+[7] time=5.64, avg_loss=0.2849, train_err=9.1055
+Eval: val_l2=0.3337
+[8] time=5.63, avg_loss=0.2611, train_err=8.3457
+Eval: val_l2=0.2646
+[Rank 0]: saved training state to runs/square_32/_best
+[9] time=5.64, avg_loss=0.2378, train_err=7.6000
+Eval: val_l2=0.2620
+[Rank 0]: saved training state to runs/square_32/_best
+[10] time=5.64, avg_loss=0.2185, train_err=6.9845
+Eval: val_l2=0.2365
+[Rank 0]: saved training state to runs/square_32/_best
+[11] time=5.64, avg_loss=0.1988, train_err=6.3529
+Eval: val_l2=0.3185
+[12] time=5.64, avg_loss=0.1943, train_err=6.2099
+Eval: val_l2=0.2373
+[13] time=5.64, avg_loss=0.1721, train_err=5.5000
+Eval: val_l2=0.2194
+[Rank 0]: saved training state to runs/square_32/_best
+[14] time=5.64, avg_loss=0.1719, train_err=5.4952
+Eval: val_l2=0.2325
+[15] time=5.63, avg_loss=0.1702, train_err=5.4394
+Eval: val_l2=0.2251
+[16] time=5.63, avg_loss=0.1527, train_err=4.8821
+Eval: val_l2=0.2049
+[Rank 0]: saved training state to runs/square_32/_best
+[17] time=5.64, avg_loss=0.1480, train_err=4.7322
+Eval: val_l2=0.2550
+[18] time=5.64, avg_loss=0.1500, train_err=4.7953
+Eval: val_l2=0.2121
+[19] time=5.64, avg_loss=0.1426, train_err=4.5577
+Eval: val_l2=0.2158
+[20] time=5.64, avg_loss=0.1323, train_err=4.2294
+Eval: val_l2=0.1955
+[Rank 0]: saved training state to runs/square_32/_best
+[21] time=5.64, avg_loss=0.1300, train_err=4.1561
+Eval: val_l2=0.2105
+[22] time=5.63, avg_loss=0.1263, train_err=4.0370
+Eval: val_l2=0.1935
+[Rank 0]: saved training state to runs/square_32/_best
+[23] time=5.63, avg_loss=0.1245, train_err=3.9801
+Eval: val_l2=0.2233
+[24] time=5.62, avg_loss=0.1215, train_err=3.8824
+Eval: val_l2=0.1945
+[25] time=5.62, avg_loss=0.1212, train_err=3.8745
+Eval: val_l2=0.1905
+[Rank 0]: saved training state to runs/square_32/_best
+[26] time=5.63, avg_loss=0.1207, train_err=3.8589
+Eval: val_l2=0.2120
+[27] time=5.63, avg_loss=0.1145, train_err=3.6613
+Eval: val_l2=0.2017
+[28] time=5.63, avg_loss=0.1168, train_err=3.7337
+Eval: val_l2=0.1858
+[Rank 0]: saved training state to runs/square_32/_best
+[29] time=5.64, avg_loss=0.1124, train_err=3.5918
+Eval: val_l2=0.1872
+[30] time=5.63, avg_loss=0.1122, train_err=3.5854
+Eval: val_l2=0.1928
+[31] time=5.63, avg_loss=0.1090, train_err=3.4844
+Eval: val_l2=0.1934
+[32] time=5.63, avg_loss=0.1081, train_err=3.4550
+Eval: val_l2=0.1857
+[Rank 0]: saved training state to runs/square_32/_best
+[33] time=5.63, avg_loss=0.1052, train_err=3.3614
+Eval: val_l2=0.2014
+[34] time=5.63, avg_loss=0.1018, train_err=3.2546
+Eval: val_l2=0.1869
+[35] time=5.63, avg_loss=0.1052, train_err=3.3630
+Eval: val_l2=0.1864
+[36] time=5.63, avg_loss=0.1031, train_err=3.2967
+Eval: val_l2=0.1902
+[37] time=5.63, avg_loss=0.1019, train_err=3.2577
+Eval: val_l2=0.1791
+[Rank 0]: saved training state to runs/square_32/_best
+[38] time=5.63, avg_loss=0.1014, train_err=3.2411
+Eval: val_l2=0.1896
+[39] time=5.63, avg_loss=0.1013, train_err=3.2371
+Eval: val_l2=0.2006
+[40] time=5.63, avg_loss=0.1036, train_err=3.3111
+Eval: val_l2=0.2002
+[41] time=5.63, avg_loss=0.0994, train_err=3.1759
+Eval: val_l2=0.1833
+[42] time=5.63, avg_loss=0.0967, train_err=3.0906
+Eval: val_l2=0.1888
+[43] time=5.64, avg_loss=0.0955, train_err=3.0515
+Eval: val_l2=0.1851
+[44] time=5.63, avg_loss=0.0990, train_err=3.1651
+Eval: val_l2=0.1997
+[45] time=5.63, avg_loss=0.1016, train_err=3.2488
+Eval: val_l2=0.1793
+[46] time=5.63, avg_loss=0.0938, train_err=2.9971
+Eval: val_l2=0.1823
+[47] time=5.63, avg_loss=0.0918, train_err=2.9335
+Eval: val_l2=0.1766
+[Rank 0]: saved training state to runs/square_32/_best
+[48] time=5.64, avg_loss=0.0907, train_err=2.8984
+Eval: val_l2=0.1885
+[49] time=5.64, avg_loss=0.0922, train_err=2.9480
+Eval: val_l2=0.1781
+[50] time=5.64, avg_loss=0.0940, train_err=3.0047
+Eval: val_l2=0.1876
+[51] time=5.64, avg_loss=0.0908, train_err=2.9013
+Eval: val_l2=0.1717
+[Rank 0]: saved training state to runs/square_32/_best
+[52] time=5.64, avg_loss=0.0867, train_err=2.7705
+Eval: val_l2=0.1757
+[53] time=5.64, avg_loss=0.0888, train_err=2.8383
+Eval: val_l2=0.1770
+[54] time=5.64, avg_loss=0.0904, train_err=2.8882
+Eval: val_l2=0.1713
+[Rank 0]: saved training state to runs/square_32/_best
+[55] time=5.64, avg_loss=0.0903, train_err=2.8878
+Eval: val_l2=0.1715
+[56] time=5.64, avg_loss=0.0856, train_err=2.7374
+Eval: val_l2=0.1758
+[57] time=5.65, avg_loss=0.0851, train_err=2.7202
+Eval: val_l2=0.1963
+[58] time=5.65, avg_loss=0.0846, train_err=2.7033
+Eval: val_l2=0.1725
+[59] time=5.65, avg_loss=0.0881, train_err=2.8168
+Eval: val_l2=0.2192
+[60] time=5.65, avg_loss=0.0837, train_err=2.6746
+Eval: val_l2=0.1802
+[61] time=5.65, avg_loss=0.0810, train_err=2.5898
+Eval: val_l2=0.1940
+[62] time=5.65, avg_loss=0.0802, train_err=2.5650
+Eval: val_l2=0.1675
+[Rank 0]: saved training state to runs/square_32/_best
+[63] time=5.65, avg_loss=0.0779, train_err=2.4897
+Eval: val_l2=0.1890
+[64] time=5.65, avg_loss=0.0841, train_err=2.6894
+Eval: val_l2=0.1779
+[65] time=5.65, avg_loss=0.0819, train_err=2.6171
+Eval: val_l2=0.1700
+[66] time=5.65, avg_loss=0.0813, train_err=2.5979
+Eval: val_l2=0.1901
+[67] time=5.65, avg_loss=0.0799, train_err=2.5538
+Eval: val_l2=0.1757
+[68] time=5.65, avg_loss=0.0792, train_err=2.5314
+Eval: val_l2=0.1710
+[69] time=5.65, avg_loss=0.0816, train_err=2.6068
+Eval: val_l2=0.1673
+[Rank 0]: saved training state to runs/square_32/_best
+[70] time=5.65, avg_loss=0.0840, train_err=2.6845
+Eval: val_l2=0.1776
+[71] time=5.65, avg_loss=0.0780, train_err=2.4926
+Eval: val_l2=0.1728
+[72] time=5.65, avg_loss=0.0780, train_err=2.4925
+Eval: val_l2=0.1688
+[73] time=5.66, avg_loss=0.0813, train_err=2.5983
+Eval: val_l2=0.1838
+[74] time=5.65, avg_loss=0.0731, train_err=2.3370
+Eval: val_l2=0.1710
+[75] time=5.65, avg_loss=0.0794, train_err=2.5390
+Eval: val_l2=0.1667
+[Rank 0]: saved training state to runs/square_32/_best
+[76] time=5.66, avg_loss=0.0741, train_err=2.3681
+Eval: val_l2=0.1650
+[Rank 0]: saved training state to runs/square_32/_best
+[77] time=5.66, avg_loss=0.0796, train_err=2.5446
+Eval: val_l2=0.1682
+[78] time=5.66, avg_loss=0.0772, train_err=2.4675
+Eval: val_l2=0.1713
+[79] time=5.66, avg_loss=0.0750, train_err=2.3970
+Eval: val_l2=0.1723
+[80] time=5.66, avg_loss=0.0783, train_err=2.5025
+Eval: val_l2=0.1831
+[81] time=5.66, avg_loss=0.0743, train_err=2.3751
+Eval: val_l2=0.1602
+[Rank 0]: saved training state to runs/square_32/_best
+[82] time=5.65, avg_loss=0.0698, train_err=2.2303
+Eval: val_l2=0.1832
+[83] time=5.65, avg_loss=0.0713, train_err=2.2775
+Eval: val_l2=0.1789
+[84] time=5.65, avg_loss=0.0730, train_err=2.3333
+Eval: val_l2=0.2018
+[85] time=5.65, avg_loss=0.0751, train_err=2.4003
+Eval: val_l2=0.1713
+[86] time=5.65, avg_loss=0.0706, train_err=2.2574
+Eval: val_l2=0.1795
+[87] time=5.65, avg_loss=0.0700, train_err=2.2360
+Eval: val_l2=0.1645
+[88] time=5.65, avg_loss=0.0734, train_err=2.3470
+Eval: val_l2=0.1648
+[89] time=5.65, avg_loss=0.0727, train_err=2.3232
+Eval: val_l2=0.1618
+[90] time=5.65, avg_loss=0.0718, train_err=2.2938
+Eval: val_l2=0.1726
+[91] time=5.65, avg_loss=0.0717, train_err=2.2933
+Eval: val_l2=0.1597
+[Rank 0]: saved training state to runs/square_32/_best
+[92] time=5.65, avg_loss=0.0676, train_err=2.1619
+Eval: val_l2=0.1631
+[93] time=5.65, avg_loss=0.0692, train_err=2.2131
+Eval: val_l2=0.1783
+[94] time=5.65, avg_loss=0.0686, train_err=2.1936
+Eval: val_l2=0.1633
+[95] time=5.65, avg_loss=0.0702, train_err=2.2440
+Eval: val_l2=0.1857
+[96] time=5.65, avg_loss=0.0699, train_err=2.2327
+Eval: val_l2=0.1642
+[97] time=5.65, avg_loss=0.0672, train_err=2.1478
+Eval: val_l2=0.1726
+[98] time=5.65, avg_loss=0.0690, train_err=2.2061
+Eval: val_l2=0.1709
+[99] time=5.65, avg_loss=0.0679, train_err=2.1688
+Eval: val_l2=0.1698
+[100] time=5.65, avg_loss=0.0658, train_err=2.1040
+Eval: val_l2=0.1648
+[101] time=5.65, avg_loss=0.0656, train_err=2.0980
+Eval: val_l2=0.1768
+[102] time=5.65, avg_loss=0.0667, train_err=2.1333
+Eval: val_l2=0.1697
+[103] time=5.65, avg_loss=0.0639, train_err=2.0430
+Eval: val_l2=0.1710
+[104] time=5.65, avg_loss=0.0655, train_err=2.0937
+Eval: val_l2=0.1739
+[105] time=5.65, avg_loss=0.0661, train_err=2.1121
+Eval: val_l2=0.2012
+[106] time=5.65, avg_loss=0.0665, train_err=2.1268
+Eval: val_l2=0.1708
+[107] time=5.67, avg_loss=0.0662, train_err=2.1154
+Eval: val_l2=0.1663
+[108] time=5.67, avg_loss=0.0660, train_err=2.1086
+Eval: val_l2=0.1766
+[109] time=5.67, avg_loss=0.0681, train_err=2.1778
+Eval: val_l2=0.1642
+[110] time=5.67, avg_loss=0.0630, train_err=2.0136
+Eval: val_l2=0.1565
+[Rank 0]: saved training state to runs/square_32/_best
+[111] time=5.67, avg_loss=0.0636, train_err=2.0338
+Eval: val_l2=0.1679
+[112] time=5.66, avg_loss=0.0622, train_err=1.9868
+Eval: val_l2=0.1628
+[113] time=5.66, avg_loss=0.0616, train_err=1.9685
+Eval: val_l2=0.1657
+[114] time=5.66, avg_loss=0.0633, train_err=2.0226
+Eval: val_l2=0.1647
+[115] time=5.67, avg_loss=0.0627, train_err=2.0029
+Eval: val_l2=0.1668
+[116] time=5.67, avg_loss=0.0648, train_err=2.0721
+Eval: val_l2=0.1577
+[117] time=5.67, avg_loss=0.0632, train_err=2.0187
+Eval: val_l2=0.1574
+[118] time=5.67, avg_loss=0.0610, train_err=1.9485
+Eval: val_l2=0.1596
+[119] time=5.66, avg_loss=0.0660, train_err=2.1093
+Eval: val_l2=0.1659
+[120] time=5.67, avg_loss=0.0636, train_err=2.0343
+Eval: val_l2=0.1597
+[121] time=5.67, avg_loss=0.0581, train_err=1.8575
+Eval: val_l2=0.1661
+[122] time=5.67, avg_loss=0.0581, train_err=1.8571
+Eval: val_l2=0.1635
+[123] time=5.67, avg_loss=0.0613, train_err=1.9589
+Eval: val_l2=0.1600
+[124] time=5.66, avg_loss=0.0601, train_err=1.9224
+Eval: val_l2=0.1675
+[125] time=5.67, avg_loss=0.0580, train_err=1.8542
+Eval: val_l2=0.1575
+[126] time=5.67, avg_loss=0.0587, train_err=1.8750
+Eval: val_l2=0.1545
+[Rank 0]: saved training state to runs/square_32/_best
+[127] time=5.67, avg_loss=0.0605, train_err=1.9347
+Eval: val_l2=0.1681
+[128] time=5.66, avg_loss=0.0603, train_err=1.9286
+Eval: val_l2=0.1516
+[Rank 0]: saved training state to runs/square_32/_best
+[129] time=5.67, avg_loss=0.0591, train_err=1.8881
+Eval: val_l2=0.1710
+[130] time=5.67, avg_loss=0.0557, train_err=1.7797
+Eval: val_l2=0.1707
+[131] time=5.67, avg_loss=0.0576, train_err=1.8427
+Eval: val_l2=0.1624
+[132] time=5.66, avg_loss=0.0618, train_err=1.9754
+Eval: val_l2=0.1577
+[133] time=5.67, avg_loss=0.0563, train_err=1.7998
+Eval: val_l2=0.1599
+[134] time=5.66, avg_loss=0.0601, train_err=1.9199
+Eval: val_l2=0.1675
+[135] time=5.66, avg_loss=0.0598, train_err=1.9107
+Eval: val_l2=0.1534
+[136] time=5.66, avg_loss=0.0554, train_err=1.7701
+Eval: val_l2=0.1683
+[137] time=5.66, avg_loss=0.0548, train_err=1.7528
+Eval: val_l2=0.1623
+[138] time=5.66, avg_loss=0.0545, train_err=1.7423
+Eval: val_l2=0.1640
+[139] time=5.66, avg_loss=0.0560, train_err=1.7897
+Eval: val_l2=0.1578
+[140] time=5.66, avg_loss=0.0574, train_err=1.8348
+Eval: val_l2=0.1635
+[141] time=5.66, avg_loss=0.0559, train_err=1.7874
+Eval: val_l2=0.1796
+[142] time=5.66, avg_loss=0.0577, train_err=1.8453
+Eval: val_l2=0.1517
+[143] time=5.66, avg_loss=0.0564, train_err=1.8026
+Eval: val_l2=0.1517
+[144] time=5.66, avg_loss=0.0557, train_err=1.7808
+Eval: val_l2=0.1553
+[145] time=5.66, avg_loss=0.0562, train_err=1.7959
+Eval: val_l2=0.1451
+[Rank 0]: saved training state to runs/square_32/_best
+[146] time=5.66, avg_loss=0.0545, train_err=1.7406
+Eval: val_l2=0.1566
+[147] time=5.65, avg_loss=0.0540, train_err=1.7246
+Eval: val_l2=0.1556
+[148] time=5.65, avg_loss=0.0520, train_err=1.6626
+Eval: val_l2=0.1582
+[149] time=5.65, avg_loss=0.0527, train_err=1.6843
+Eval: val_l2=0.1605
+[150] time=5.65, avg_loss=0.0519, train_err=1.6586
+Eval: val_l2=0.1689
+[151] time=5.65, avg_loss=0.0526, train_err=1.6819
+Eval: val_l2=0.1794
+[152] time=5.65, avg_loss=0.0521, train_err=1.6658
+Eval: val_l2=0.1550
+[153] time=5.65, avg_loss=0.0546, train_err=1.7447
+Eval: val_l2=0.1558
+[154] time=5.65, avg_loss=0.0511, train_err=1.6348
+Eval: val_l2=0.1520
+[155] time=5.65, avg_loss=0.0521, train_err=1.6652
+Eval: val_l2=0.1605
+[156] time=5.65, avg_loss=0.0506, train_err=1.6165
+Eval: val_l2=0.1594
+[157] time=5.65, avg_loss=0.0510, train_err=1.6307
+Eval: val_l2=0.1557
+[158] time=5.65, avg_loss=0.0534, train_err=1.7076
+Eval: val_l2=0.1594
+[159] time=5.65, avg_loss=0.0513, train_err=1.6404
+Eval: val_l2=0.1506
+[160] time=5.65, avg_loss=0.0504, train_err=1.6099
+Eval: val_l2=0.1582
+[161] time=5.65, avg_loss=0.0504, train_err=1.6108
+Eval: val_l2=0.1544
+[162] time=5.65, avg_loss=0.0489, train_err=1.5617
+Eval: val_l2=0.1717
+[163] time=5.65, avg_loss=0.0515, train_err=1.6448
+Eval: val_l2=0.1525
+[164] time=5.65, avg_loss=0.0495, train_err=1.5823
+Eval: val_l2=0.1520
+[165] time=5.65, avg_loss=0.0485, train_err=1.5498
+Eval: val_l2=0.1585
+[166] time=5.65, avg_loss=0.0498, train_err=1.5919
+Eval: val_l2=0.1546
+[167] time=5.65, avg_loss=0.0486, train_err=1.5544
+Eval: val_l2=0.1546
+[168] time=5.65, avg_loss=0.0509, train_err=1.6281
+Eval: val_l2=0.1460
+[169] time=5.65, avg_loss=0.0492, train_err=1.5737
+Eval: val_l2=0.1509
+[170] time=5.65, avg_loss=0.0471, train_err=1.5040
+Eval: val_l2=0.1525
+[171] time=5.65, avg_loss=0.0477, train_err=1.5233
+Eval: val_l2=0.1582
+[172] time=5.65, avg_loss=0.0463, train_err=1.4786
+Eval: val_l2=0.1604
+[173] time=5.65, avg_loss=0.0507, train_err=1.6203
+Eval: val_l2=0.1602
+[174] time=5.65, avg_loss=0.0476, train_err=1.5220
+Eval: val_l2=0.1555
+[175] time=5.65, avg_loss=0.0460, train_err=1.4693
+Eval: val_l2=0.1606
+[176] time=5.65, avg_loss=0.0476, train_err=1.5204
+Eval: val_l2=0.1536
+[177] time=5.65, avg_loss=0.0458, train_err=1.4638
+Eval: val_l2=0.1541
+[178] time=5.64, avg_loss=0.0450, train_err=1.4394
+Eval: val_l2=0.1519
+[179] time=5.64, avg_loss=0.0439, train_err=1.4024
+Eval: val_l2=0.1525
+[180] time=5.64, avg_loss=0.0451, train_err=1.4418
+Eval: val_l2=0.1547
+[181] time=5.64, avg_loss=0.0466, train_err=1.4903
+Eval: val_l2=0.1546
+[182] time=5.64, avg_loss=0.0456, train_err=1.4574
+Eval: val_l2=0.1507
+[183] time=5.64, avg_loss=0.0475, train_err=1.5189
+Eval: val_l2=0.1471
+[184] time=5.64, avg_loss=0.0486, train_err=1.5536
+Eval: val_l2=0.1533
+[185] time=5.64, avg_loss=0.0485, train_err=1.5513
+Eval: val_l2=0.1552
+[186] time=5.64, avg_loss=0.0432, train_err=1.3808
+Eval: val_l2=0.1502
+[187] time=5.64, avg_loss=0.0431, train_err=1.3767
+Eval: val_l2=0.1534
+[188] time=5.64, avg_loss=0.0437, train_err=1.3980
+Eval: val_l2=0.1518
+[189] time=5.64, avg_loss=0.0431, train_err=1.3774
+Eval: val_l2=0.1559
+[190] time=5.64, avg_loss=0.0430, train_err=1.3733
+Eval: val_l2=0.1551
+[191] time=5.64, avg_loss=0.0432, train_err=1.3805
+Eval: val_l2=0.1524
+[192] time=5.64, avg_loss=0.0430, train_err=1.3745
+Eval: val_l2=0.1549
+[193] time=5.65, avg_loss=0.0431, train_err=1.3776
+Eval: val_l2=0.1495
+[194] time=5.64, avg_loss=0.0430, train_err=1.3735
+Eval: val_l2=0.1536
+[195] time=5.64, avg_loss=0.0431, train_err=1.3777
+Eval: val_l2=0.1590
+[196] time=5.64, avg_loss=0.0434, train_err=1.3864
+Eval: val_l2=0.1540
+[197] time=5.64, avg_loss=0.0417, train_err=1.3321
+Eval: val_l2=0.1490
+[198] time=5.65, avg_loss=0.0391, train_err=1.2500
+Eval: val_l2=0.1546
+[199] time=5.64, avg_loss=0.0401, train_err=1.2829
+Eval: val_l2=0.1466
+[200] time=5.64, avg_loss=0.0418, train_err=1.3352
+Eval: val_l2=0.1514
+[201] time=5.64, avg_loss=0.0433, train_err=1.3840
+Eval: val_l2=0.1502
+[202] time=5.64, avg_loss=0.0410, train_err=1.3120
+Eval: val_l2=0.1539
+[203] time=5.64, avg_loss=0.0400, train_err=1.2796
+Eval: val_l2=0.1497
+[204] time=5.64, avg_loss=0.0410, train_err=1.3109
+Eval: val_l2=0.1517
+[205] time=5.64, avg_loss=0.0405, train_err=1.2950
+Eval: val_l2=0.1494
+[206] time=5.64, avg_loss=0.0387, train_err=1.2366
+Eval: val_l2=0.1527
+[207] time=5.64, avg_loss=0.0379, train_err=1.2108
+Eval: val_l2=0.1512
+[208] time=5.65, avg_loss=0.0389, train_err=1.2446
+Eval: val_l2=0.1499
+[209] time=5.65, avg_loss=0.0411, train_err=1.3152
+Eval: val_l2=0.1574
+[210] time=5.65, avg_loss=0.0407, train_err=1.3007
+Eval: val_l2=0.1504
+[211] time=5.65, avg_loss=0.0379, train_err=1.2126
+Eval: val_l2=0.1547
+[212] time=5.65, avg_loss=0.0371, train_err=1.1848
+Eval: val_l2=0.1529
+[213] time=5.65, avg_loss=0.0375, train_err=1.1991
+Eval: val_l2=0.1509
+[214] time=5.64, avg_loss=0.0375, train_err=1.1997
+Eval: val_l2=0.1485
+[215] time=5.64, avg_loss=0.0391, train_err=1.2500
+Eval: val_l2=0.1483
+[216] time=5.64, avg_loss=0.0384, train_err=1.2274
+Eval: val_l2=0.1529
+[217] time=5.64, avg_loss=0.0374, train_err=1.1959
+Eval: val_l2=0.1493
+[218] time=5.64, avg_loss=0.0371, train_err=1.1865
+Eval: val_l2=0.1467
+[219] time=5.64, avg_loss=0.0372, train_err=1.1897
+Eval: val_l2=0.1471
+[220] time=5.64, avg_loss=0.0361, train_err=1.1552
+Eval: val_l2=0.1508
+[221] time=5.64, avg_loss=0.0361, train_err=1.1538
+Eval: val_l2=0.1484
+[222] time=5.64, avg_loss=0.0378, train_err=1.2094
+Eval: val_l2=0.1613
+[223] time=5.64, avg_loss=0.0358, train_err=1.1440
+Eval: val_l2=0.1485
+[224] time=5.64, avg_loss=0.0353, train_err=1.1280
+Eval: val_l2=0.1502
+[225] time=5.64, avg_loss=0.0344, train_err=1.0988
+Eval: val_l2=0.1481
+[226] time=5.64, avg_loss=0.0337, train_err=1.0778
+Eval: val_l2=0.1488
+[227] time=5.64, avg_loss=0.0334, train_err=1.0690
+Eval: val_l2=0.1467
+[228] time=5.63, avg_loss=0.0339, train_err=1.0850
+Eval: val_l2=0.1491
+[229] time=5.64, avg_loss=0.0354, train_err=1.1309
+Eval: val_l2=0.1478
+[230] time=5.64, avg_loss=0.0350, train_err=1.1185
+Eval: val_l2=0.1582
+[231] time=5.64, avg_loss=0.0345, train_err=1.1042
+Eval: val_l2=0.1516
+[232] time=5.64, avg_loss=0.0344, train_err=1.0985
+Eval: val_l2=0.1492
+[233] time=5.64, avg_loss=0.0348, train_err=1.1129
+Eval: val_l2=0.1499
+[234] time=5.64, avg_loss=0.0329, train_err=1.0521
+Eval: val_l2=0.1506
+[235] time=5.64, avg_loss=0.0321, train_err=1.0249
+Eval: val_l2=0.1468
+[236] time=5.64, avg_loss=0.0329, train_err=1.0506
+Eval: val_l2=0.1470
+[237] time=5.64, avg_loss=0.0328, train_err=1.0482
+Eval: val_l2=0.1503
+[238] time=5.63, avg_loss=0.0344, train_err=1.0993
+Eval: val_l2=0.1473
+[239] time=5.63, avg_loss=0.0321, train_err=1.0265
+Eval: val_l2=0.1504
+[240] time=5.64, avg_loss=0.0318, train_err=1.0171
+Eval: val_l2=0.1514
+[241] time=5.63, avg_loss=0.0319, train_err=1.0210
+Eval: val_l2=0.1463
+[242] time=5.63, avg_loss=0.0306, train_err=0.9766
+Eval: val_l2=0.1459
+[243] time=5.63, avg_loss=0.0310, train_err=0.9915
+Eval: val_l2=0.1483
+[244] time=5.63, avg_loss=0.0317, train_err=1.0133
+Eval: val_l2=0.1464
+[245] time=5.64, avg_loss=0.0326, train_err=1.0429
+Eval: val_l2=0.1469
+[246] time=5.64, avg_loss=0.0314, train_err=1.0044
+Eval: val_l2=0.1507
+[247] time=5.64, avg_loss=0.0306, train_err=0.9781
+Eval: val_l2=0.1474
+[248] time=5.64, avg_loss=0.0299, train_err=0.9573
+Eval: val_l2=0.1486
+[249] time=5.63, avg_loss=0.0292, train_err=0.9330
+Eval: val_l2=0.1448
+[Rank 0]: saved training state to runs/square_32/_best
+[250] time=5.64, avg_loss=0.0291, train_err=0.9293
+Eval: val_l2=0.1499
+[251] time=5.64, avg_loss=0.0289, train_err=0.9226
+Eval: val_l2=0.1446
+[Rank 0]: saved training state to runs/square_32/_best
+[252] time=5.64, avg_loss=0.0293, train_err=0.9362
+Eval: val_l2=0.1464
+[253] time=5.64, avg_loss=0.0293, train_err=0.9351
+Eval: val_l2=0.1538
+[254] time=5.64, avg_loss=0.0286, train_err=0.9145
+Eval: val_l2=0.1475
+[255] time=5.64, avg_loss=0.0292, train_err=0.9325
+Eval: val_l2=0.1470
+[256] time=5.64, avg_loss=0.0285, train_err=0.9095
+Eval: val_l2=0.1476
+[257] time=5.64, avg_loss=0.0281, train_err=0.8984
+Eval: val_l2=0.1455
+[258] time=5.64, avg_loss=0.0290, train_err=0.9261
+Eval: val_l2=0.1508
+[259] time=5.64, avg_loss=0.0283, train_err=0.9038
+Eval: val_l2=0.1472
+[260] time=5.64, avg_loss=0.0273, train_err=0.8735
+Eval: val_l2=0.1487
+[261] time=5.64, avg_loss=0.0285, train_err=0.9102
+Eval: val_l2=0.1447
+[262] time=5.64, avg_loss=0.0278, train_err=0.8871
+Eval: val_l2=0.1484
+[263] time=5.64, avg_loss=0.0267, train_err=0.8518
+Eval: val_l2=0.1480
+[264] time=5.64, avg_loss=0.0269, train_err=0.8606
+Eval: val_l2=0.1457
+[265] time=5.64, avg_loss=0.0265, train_err=0.8471
+Eval: val_l2=0.1500
+[266] time=5.63, avg_loss=0.0266, train_err=0.8517
+Eval: val_l2=0.1464
+[267] time=5.63, avg_loss=0.0258, train_err=0.8247
+Eval: val_l2=0.1466
+[268] time=5.63, avg_loss=0.0259, train_err=0.8263
+Eval: val_l2=0.1468
+[269] time=5.63, avg_loss=0.0267, train_err=0.8521
+Eval: val_l2=0.1475
+[270] time=5.63, avg_loss=0.0259, train_err=0.8271
+Eval: val_l2=0.1469
+[271] time=5.63, avg_loss=0.0251, train_err=0.8029
+Eval: val_l2=0.1447
+[272] time=5.63, avg_loss=0.0248, train_err=0.7929
+Eval: val_l2=0.1453
+[273] time=5.63, avg_loss=0.0245, train_err=0.7842
+Eval: val_l2=0.1420
+[Rank 0]: saved training state to runs/square_32/_best
+[274] time=5.63, avg_loss=0.0257, train_err=0.8224
+Eval: val_l2=0.1481
+[275] time=5.63, avg_loss=0.0253, train_err=0.8090
+Eval: val_l2=0.1447
+[276] time=5.63, avg_loss=0.0248, train_err=0.7931
+Eval: val_l2=0.1449
+[277] time=5.63, avg_loss=0.0244, train_err=0.7808
+Eval: val_l2=0.1443
+[278] time=5.63, avg_loss=0.0237, train_err=0.7561
+Eval: val_l2=0.1477
+[279] time=5.63, avg_loss=0.0236, train_err=0.7533
+Eval: val_l2=0.1469
+[280] time=5.63, avg_loss=0.0245, train_err=0.7833
+Eval: val_l2=0.1521
+[281] time=5.63, avg_loss=0.0248, train_err=0.7930
+Eval: val_l2=0.1442
+[282] time=5.63, avg_loss=0.0237, train_err=0.7586
+Eval: val_l2=0.1417
+[Rank 0]: saved training state to runs/square_32/_best
+[283] time=5.63, avg_loss=0.0231, train_err=0.7396
+Eval: val_l2=0.1462
+[284] time=5.63, avg_loss=0.0233, train_err=0.7451
+Eval: val_l2=0.1435
+[285] time=5.63, avg_loss=0.0238, train_err=0.7595
+Eval: val_l2=0.1450
+[286] time=5.63, avg_loss=0.0229, train_err=0.7310
+Eval: val_l2=0.1448
+[287] time=5.63, avg_loss=0.0234, train_err=0.7491
+Eval: val_l2=0.1462
+[288] time=5.63, avg_loss=0.0225, train_err=0.7194
+Eval: val_l2=0.1423
+[289] time=5.63, avg_loss=0.0225, train_err=0.7193
+Eval: val_l2=0.1445
+[290] time=5.63, avg_loss=0.0221, train_err=0.7072
+Eval: val_l2=0.1453
+[291] time=5.63, avg_loss=0.0220, train_err=0.7044
+Eval: val_l2=0.1486
+[292] time=5.63, avg_loss=0.0219, train_err=0.6996
+Eval: val_l2=0.1447
+[293] time=5.63, avg_loss=0.0216, train_err=0.6898
+Eval: val_l2=0.1468
+[294] time=5.63, avg_loss=0.0215, train_err=0.6877
+Eval: val_l2=0.1435
+[295] time=5.63, avg_loss=0.0216, train_err=0.6916
+Eval: val_l2=0.1456
+[296] time=5.63, avg_loss=0.0212, train_err=0.6771
+Eval: val_l2=0.1462
+[297] time=5.63, avg_loss=0.0209, train_err=0.6691
+Eval: val_l2=0.1439
+[298] time=5.63, avg_loss=0.0210, train_err=0.6702
+Eval: val_l2=0.1433
+[299] time=5.63, avg_loss=0.0210, train_err=0.6697
+Eval: val_l2=0.1449
+[300] time=5.63, avg_loss=0.0209, train_err=0.6671
+Eval: val_l2=0.1440
+[301] time=5.63, avg_loss=0.0206, train_err=0.6574
+Eval: val_l2=0.1461
+[302] time=5.63, avg_loss=0.0204, train_err=0.6505
+Eval: val_l2=0.1451
+[303] time=5.62, avg_loss=0.0200, train_err=0.6404
+Eval: val_l2=0.1439
+[304] time=5.62, avg_loss=0.0200, train_err=0.6385
+Eval: val_l2=0.1444
+[305] time=5.63, avg_loss=0.0199, train_err=0.6349
+Eval: val_l2=0.1433
+[306] time=5.63, avg_loss=0.0197, train_err=0.6296
+Eval: val_l2=0.1444
+[307] time=5.63, avg_loss=0.0202, train_err=0.6464
+Eval: val_l2=0.1438
+[308] time=5.63, avg_loss=0.0196, train_err=0.6255
+Eval: val_l2=0.1443
+[309] time=5.63, avg_loss=0.0190, train_err=0.6064
+Eval: val_l2=0.1417
+[Rank 0]: saved training state to runs/square_32/_best
+[310] time=5.63, avg_loss=0.0195, train_err=0.6238
+Eval: val_l2=0.1439
+[311] time=5.63, avg_loss=0.0193, train_err=0.6168
+Eval: val_l2=0.1418
+[312] time=5.63, avg_loss=0.0194, train_err=0.6187
+Eval: val_l2=0.1434
+[313] time=5.63, avg_loss=0.0193, train_err=0.6173
+Eval: val_l2=0.1436
+[314] time=5.63, avg_loss=0.0191, train_err=0.6119
+Eval: val_l2=0.1424
+[315] time=5.63, avg_loss=0.0186, train_err=0.5961
+Eval: val_l2=0.1422
+[316] time=5.63, avg_loss=0.0184, train_err=0.5878
+Eval: val_l2=0.1429
+[317] time=5.63, avg_loss=0.0184, train_err=0.5888
+Eval: val_l2=0.1442
+[318] time=5.63, avg_loss=0.0181, train_err=0.5791
+Eval: val_l2=0.1426
+[319] time=5.63, avg_loss=0.0181, train_err=0.5787
+Eval: val_l2=0.1432
+[320] time=5.63, avg_loss=0.0182, train_err=0.5804
+Eval: val_l2=0.1436
+[321] time=5.63, avg_loss=0.0179, train_err=0.5720
+Eval: val_l2=0.1426
+[322] time=5.63, avg_loss=0.0183, train_err=0.5838
+Eval: val_l2=0.1427
+[323] time=5.63, avg_loss=0.0179, train_err=0.5721
+Eval: val_l2=0.1418
+[324] time=5.63, avg_loss=0.0178, train_err=0.5674
+Eval: val_l2=0.1425
+[325] time=5.63, avg_loss=0.0177, train_err=0.5644
+Eval: val_l2=0.1443
+[326] time=5.63, avg_loss=0.0175, train_err=0.5606
+Eval: val_l2=0.1426
+[327] time=5.63, avg_loss=0.0173, train_err=0.5543
+Eval: val_l2=0.1433
+[328] time=5.63, avg_loss=0.0171, train_err=0.5468
+Eval: val_l2=0.1430
+[329] time=5.63, avg_loss=0.0170, train_err=0.5428
+Eval: val_l2=0.1431
+[330] time=5.63, avg_loss=0.0170, train_err=0.5444
+Eval: val_l2=0.1436
+[331] time=5.63, avg_loss=0.0172, train_err=0.5489
+Eval: val_l2=0.1435
+[332] time=5.63, avg_loss=0.0169, train_err=0.5416
+Eval: val_l2=0.1421
+[333] time=5.63, avg_loss=0.0167, train_err=0.5352
+Eval: val_l2=0.1439
+[334] time=5.63, avg_loss=0.0169, train_err=0.5395
+Eval: val_l2=0.1427
+[335] time=5.63, avg_loss=0.0169, train_err=0.5390
+Eval: val_l2=0.1419
+[336] time=5.63, avg_loss=0.0169, train_err=0.5389
+Eval: val_l2=0.1427
+[337] time=5.63, avg_loss=0.0167, train_err=0.5327
+Eval: val_l2=0.1429
+[338] time=5.63, avg_loss=0.0164, train_err=0.5249
+Eval: val_l2=0.1432
+[339] time=5.63, avg_loss=0.0163, train_err=0.5222
+Eval: val_l2=0.1424
+[340] time=5.63, avg_loss=0.0163, train_err=0.5214
+Eval: val_l2=0.1429
+[341] time=5.63, avg_loss=0.0162, train_err=0.5178
+Eval: val_l2=0.1419
+[342] time=5.63, avg_loss=0.0160, train_err=0.5126
+Eval: val_l2=0.1424
+[343] time=5.64, avg_loss=0.0160, train_err=0.5120
+Eval: val_l2=0.1425
+[344] time=5.64, avg_loss=0.0161, train_err=0.5140
+Eval: val_l2=0.1422
+[345] time=5.64, avg_loss=0.0161, train_err=0.5131
+Eval: val_l2=0.1415
+[Rank 0]: saved training state to runs/square_32/_best
+[346] time=5.64, avg_loss=0.0161, train_err=0.5132
+Eval: val_l2=0.1425
+[347] time=5.64, avg_loss=0.0159, train_err=0.5093
+Eval: val_l2=0.1421
+[348] time=5.64, avg_loss=0.0157, train_err=0.5029
+Eval: val_l2=0.1415
+[Rank 0]: saved training state to runs/square_32/_best
+[349] time=5.64, avg_loss=0.0157, train_err=0.5003
+Eval: val_l2=0.1424
+[350] time=5.64, avg_loss=0.0156, train_err=0.4992
+Eval: val_l2=0.1420
+[351] time=5.64, avg_loss=0.0157, train_err=0.5011
+Eval: val_l2=0.1422
+[352] time=5.64, avg_loss=0.0156, train_err=0.4992
+Eval: val_l2=0.1423
+[353] time=5.64, avg_loss=0.0155, train_err=0.4970
+Eval: val_l2=0.1417
+[354] time=5.65, avg_loss=0.0155, train_err=0.4946
+Eval: val_l2=0.1417
+[355] time=5.65, avg_loss=0.0155, train_err=0.4945
+Eval: val_l2=0.1424
+[356] time=5.65, avg_loss=0.0154, train_err=0.4935
+Eval: val_l2=0.1419
+[357] time=5.65, avg_loss=0.0153, train_err=0.4905
+Eval: val_l2=0.1421
+[358] time=5.65, avg_loss=0.0153, train_err=0.4904
+Eval: val_l2=0.1422
+[359] time=5.65, avg_loss=0.0153, train_err=0.4893
+Eval: val_l2=0.1418
+[360] time=5.65, avg_loss=0.0152, train_err=0.4871
+Eval: val_l2=0.1418
+[361] time=5.65, avg_loss=0.0152, train_err=0.4868
+Eval: val_l2=0.1416
+[362] time=5.65, avg_loss=0.0152, train_err=0.4851
+Eval: val_l2=0.1415
+[363] time=5.65, avg_loss=0.0152, train_err=0.4843
+Eval: val_l2=0.1418
+[364] time=5.66, avg_loss=0.0151, train_err=0.4837
+Eval: val_l2=0.1417
+[365] time=5.67, avg_loss=0.0151, train_err=0.4828
+Eval: val_l2=0.1415
+[366] time=5.67, avg_loss=0.0151, train_err=0.4817
+Eval: val_l2=0.1417
+[367] time=5.67, avg_loss=0.0151, train_err=0.4818
+Eval: val_l2=0.1418
+[368] time=5.67, avg_loss=0.0150, train_err=0.4809
+Eval: val_l2=0.1414
+[Rank 0]: saved training state to runs/square_32/_best
+[369] time=5.67, avg_loss=0.0150, train_err=0.4801
+Eval: val_l2=0.1414
+[370] time=5.67, avg_loss=0.0150, train_err=0.4793
+Eval: val_l2=0.1412
+[Rank 0]: saved training state to runs/square_32/_best
+[371] time=5.67, avg_loss=0.0150, train_err=0.4786
+Eval: val_l2=0.1416
+[372] time=5.67, avg_loss=0.0150, train_err=0.4780
+Eval: val_l2=0.1417
+[373] time=5.67, avg_loss=0.0149, train_err=0.4775
+Eval: val_l2=0.1416
+[374] time=5.67, avg_loss=0.0149, train_err=0.4771
+Eval: val_l2=0.1417
+[375] time=5.67, avg_loss=0.0149, train_err=0.4765
+Eval: val_l2=0.1414
+[376] time=5.67, avg_loss=0.0149, train_err=0.4759
+Eval: val_l2=0.1414
+[377] time=5.67, avg_loss=0.0149, train_err=0.4755
+Eval: val_l2=0.1416
+[378] time=5.67, avg_loss=0.0149, train_err=0.4752
+Eval: val_l2=0.1414
+[379] time=5.67, avg_loss=0.0149, train_err=0.4748
+Eval: val_l2=0.1415
+[380] time=5.67, avg_loss=0.0148, train_err=0.4744
+Eval: val_l2=0.1413
+[381] time=5.67, avg_loss=0.0148, train_err=0.4740
+Eval: val_l2=0.1414
+[382] time=5.68, avg_loss=0.0148, train_err=0.4737
+Eval: val_l2=0.1415
+[383] time=5.68, avg_loss=0.0148, train_err=0.4734
+Eval: val_l2=0.1414
+[384] time=5.68, avg_loss=0.0148, train_err=0.4732
+Eval: val_l2=0.1414
+[385] time=5.66, avg_loss=0.0148, train_err=0.4729
+Eval: val_l2=0.1414
+[386] time=5.65, avg_loss=0.0148, train_err=0.4727
+Eval: val_l2=0.1414
+[387] time=5.65, avg_loss=0.0148, train_err=0.4725
+Eval: val_l2=0.1413
+[388] time=5.65, avg_loss=0.0148, train_err=0.4722
+Eval: val_l2=0.1414
+[389] time=5.65, avg_loss=0.0148, train_err=0.4721
+Eval: val_l2=0.1413
+[390] time=5.65, avg_loss=0.0148, train_err=0.4719
+Eval: val_l2=0.1413
+[391] time=5.65, avg_loss=0.0148, train_err=0.4718
+Eval: val_l2=0.1414
+[392] time=5.65, avg_loss=0.0148, train_err=0.4717
+Eval: val_l2=0.1413
+[393] time=5.65, avg_loss=0.0148, train_err=0.4716
+Eval: val_l2=0.1413
+[394] time=5.65, avg_loss=0.0148, train_err=0.4715
+Eval: val_l2=0.1413
+[395] time=5.65, avg_loss=0.0147, train_err=0.4714
+Eval: val_l2=0.1413
+[396] time=5.65, avg_loss=0.0147, train_err=0.4713
+Eval: val_l2=0.1413
+[397] time=5.65, avg_loss=0.0147, train_err=0.4713
+Eval: val_l2=0.1413
+[398] time=5.65, avg_loss=0.0147, train_err=0.4713
+Eval: val_l2=0.1413
+[399] time=5.65, avg_loss=0.0147, train_err=0.4712
+Eval: val_l2=0.1413
+Loaded best-val_l2 weights from runs/square_32/_best/best_model_state_dict.pt.
+Final val metrics (best-checkpoint weights):
+  per_sample_mean_rel_l2   = 0.1412
+  global_rel_l2            = 0.1014
+  mse                      = 0.0011
+  mae                      = 0.0173
+Saved checkpoint to runs/square_32/fno2d.pth
+Saved normalisation stats to runs/square_32/fno2d_stats.npz
+[2026-06-26T03:32:37+01:00] === training done ===

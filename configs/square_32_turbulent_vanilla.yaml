@@ -1,0 +1,81 @@
+# Turbulent regime + vanilla FNO + bumped modes.
+#
+# Combines two independent ablations on top of the laminar baseline:
+#
+#   1. Turbulent velocity field (velocity_kmax = 16; cf. square_32.yaml
+#      which uses kmax=8). Operator_learning_chapter.pdf §2.4.
+#   2. Vanilla FNO architecture: use_channel_mlp=false, no soft-gating
+#      skip. Goal: restore zero-shot super-resolution at G=63 (the
+#      neuralop-defaults checkpoint failed there with rel L2 ≈ 0.92,
+#      diagnosed as the channel MLP / soft-gating learning grid-specific
+#      feature interactions).
+#   3. modes: 12 -> 16. The turbulent velocity field carries energy up
+#      to mode 16, so a 12-mode model spectrally truncates information
+#      that affects the committor's sharp corridor boundaries (visible
+#      as diffuse boundaries in the kmax=16 + modes=12 inference image).
+#      modes=16 sits at G=32's Nyquist limit (32//2 = 16), so it's the
+#      maximum usable cap for super-res to G≥32.
+
+name: square_32_turbulent_vanilla
+output_dir: runs/square_32_turbulent_vanilla
+
+pde:
+  fine_grid: 311
+  coarse_grid: 32
+  reynolds: 10.0
+  char_length: 0.2
+  viscosity: 1.0
+  domain: square
+  eps_1: 0.0
+  eps_2: 0.0
+  velocity_kmin: 1
+  velocity_kmax: 16
+
+data:
+  num_train_solutions: 5000
+  num_test_solutions: 1000
+  train_csv: runs/square_32_turbulent_vanilla/train.csv
+  test_csv:  runs/square_32_turbulent_vanilla/test.csv
+  include_finv_column: false
+  batch_size: 32
+  num_workers: 0
+  seed: 2203_2025
+  rho_min_max: 0.05
+  rho_min_l2:  0.0
+  oversample_factor: 2.0
+
+model:
+  in_channels: 2
+  out_channels: 1
+  # Bumped from 12: turbulent rho has meaningful spectral content up
+  # to ~mode 16 (the velocity_kmax). At G=32 Nyquist is 16, so this
+  # is the maximum cap that's also safe for super-resolution to G>=32.
+  modes: 16
+  width: 32
+  depth: 4
+  projection_hidden: 64
+  activation: gelu
+  domain_padding: [0.125, 0.0]
+  # Vanilla FNO (Li et al. 2021): no per-block channel MLP, original
+  # pointwise W_l skip path. Restores discretisation invariance at
+  # higher grids.
+  use_channel_mlp: false
+  channel_mlp_skip: none
+  fno_skip: linear
+
+train:
+  epochs: 50
+  lr: 0.001
+  weight_decay: 0.0001
+  loss: h1
+  loss_eps: 0.0
+  scheduler: cosine
+  checkpoint_path: runs/square_32_turbulent_vanilla/fno2d.pth
+  device: auto
+  deterministic: false
+
+eval:
+  checkpoint_path: runs/square_32_turbulent_vanilla/fno2d.pth
+  output_dir: runs/square_32_turbulent_vanilla/eval
+  test_resolutions: [16, 32, 63]
+  num_plot_samples: 3

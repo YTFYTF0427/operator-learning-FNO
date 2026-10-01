@@ -1,0 +1,82 @@
+# Square-domain baseline at 32x32 (dissertation Section 5.1, Figure 8).
+# Reproduces the cell s=s'=32 of Table 1 (relative L2 ~ 0.411) when
+# ported correctly.
+
+name: square_32
+output_dir: runs/square_32
+
+pde:
+  fine_grid: 311
+  coarse_grid: 32
+  reynolds: 5.0
+  char_length: 0.2
+  viscosity: 1.0
+  domain: square       # phi = 0, psi = 1 (identity transform)
+  eps_1: 0.0
+  eps_2: 0.0
+  # Velocity-field Fourier-mode band: |k| in [kmin, kmax] * (2*pi/L_dom).
+  # Operator_learning_chapter.pdf §2.4 splits the regimes here:
+  #   kmax = 8  -> laminar  (this config)
+  #   kmax = 16 -> turbulent (see configs/square_32_turbulent.yaml)
+  velocity_kmin: 1
+  velocity_kmax: 8
+
+data:
+  # Dissertation main result (Table 1, s=s'=32) uses 5000 train + 1000 test.
+  num_train_solutions: 5000
+  num_test_solutions: 1000
+  train_csv: runs/square_32/train.csv
+  test_csv:  runs/square_32/test.csv
+  include_finv_column: false
+  batch_size: 32
+  num_workers: 0
+  seed: 408_2026
+  # Rejection sampling. The cheap peak filter (rho_min_max) is enough --
+  # the dissertation's flattened global rel L2 (FNO_1_Test.py line 102)
+  # weights samples by ||y||_2 so it's already insensitive to small-
+  # target draws.
+  rho_min_max: 0.05
+  rho_min_l2:  0.0
+  oversample_factor: 2.0
+
+model:
+  in_channels: 2        # (b1, b2); neuralop adds (x, y) via grid embedding
+  out_channels: 1
+  modes: 12
+  # width 32 (down from 128) per fno-explained.pdf §4.4: start at 16-32
+  # and grow only if needed. 128 was wildly over-parameterised (~1.4M
+  # params) for a 32x32 grid + 5000 samples; 32 gives ~90k params and
+  # should close most of the train/val gap.
+  width: 32
+  depth: 16
+  projection_hidden: 64    # 2x width, matches neuralop's default ratio
+  activation: gelu
+  # Dirichlet x is non-periodic; the FFT inside SpectralConv would see a
+  # hard step at x=0,1 without padding. Pad x by 12.5% of grid; leave y
+  # untouched (it's genuinely periodic). fno-explained.pdf §3.6.
+  domain_padding: [0.125, 0.0]
+
+train:
+  epochs: 700
+  lr: 0.001
+  weight_decay: 0.0001  # AdamW-style L2 reg; closes some of the small-data overfitting gap
+  # H1 Sobolev loss penalises both function value and gradient errors;
+  # fno-explained.pdf §5.1 recommends it for elliptic PDEs whose
+  # solutions are smooth (committors qualify). Switch to relative_l2 /
+  # absolute_l2 / mse to compare. periodic_in_x=False, periodic_in_y=True
+  # is wired in trainer._build_loss to match the committor BCs.
+  loss: h1
+  loss_eps: 0.0         # 0 falls through to neuralop's 1e-8 default.
+                        # We previously used 1.0 to cap small-target
+                        # blow-up in per-sample rel L2; the dissertation's
+                        # flattened global metric doesn't need that.
+  scheduler: cosine     # CosineAnnealingLR over `epochs`; LR -> 0 at the end
+  checkpoint_path: runs/square_32/fno2d.pth
+  device: auto
+  deterministic: false
+
+eval:
+  checkpoint_path: runs/square_32/fno2d.pth
+  output_dir: runs/square_32/eval
+  test_resolutions: [16, 32, 63]
+  num_plot_samples: 3

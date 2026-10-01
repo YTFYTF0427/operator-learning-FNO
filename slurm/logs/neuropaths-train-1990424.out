@@ -1,0 +1,142 @@
+[2026-05-06T00:49:00+01:00] host=gpu014.avon.hpc cpus=10 gpu=GPU 0: Quadro RTX 6000 (UUID: GPU-d50f43e6-bd12-aa56-6799-a3ba3bd9ee3f) config=configs/square_32.yaml
+Using device: cuda:0 (Quadro RTX 6000)
+Input channel stats (train): mean=[0.0013400913449004292, -0.0013040477642789483], std=[7.05985689163208, 7.0826416015625]
+Training on 5000 samples
+Testing on [1000] samples         on resolutions ['val'].
+Raw outputs of shape torch.Size([32, 1, 32, 32])
+[0] time=5.47, avg_loss=0.4921, train_err=15.6719
+Eval: val_l2=0.3519
+[Rank 0]: saved training state to runs/square_32/_best
+[1] time=1.80, avg_loss=0.2934, train_err=9.3437
+Eval: val_l2=0.2241
+[Rank 0]: saved training state to runs/square_32/_best
+[2] time=1.80, avg_loss=0.2196, train_err=6.9940
+Eval: val_l2=0.2220
+[Rank 0]: saved training state to runs/square_32/_best
+[3] time=1.79, avg_loss=0.1805, train_err=5.7484
+Eval: val_l2=0.1228
+[Rank 0]: saved training state to runs/square_32/_best
+[4] time=1.79, avg_loss=0.1516, train_err=4.8294
+Eval: val_l2=0.1107
+[Rank 0]: saved training state to runs/square_32/_best
+[5] time=1.79, avg_loss=0.1384, train_err=4.4079
+Eval: val_l2=0.1206
+[6] time=1.79, avg_loss=0.1241, train_err=3.9536
+Eval: val_l2=0.0979
+[Rank 0]: saved training state to runs/square_32/_best
+[7] time=1.79, avg_loss=0.1147, train_err=3.6539
+Eval: val_l2=0.1018
+[8] time=1.79, avg_loss=0.1047, train_err=3.3360
+Eval: val_l2=0.0874
+[Rank 0]: saved training state to runs/square_32/_best
+[9] time=1.79, avg_loss=0.1011, train_err=3.2186
+Eval: val_l2=0.0903
+[10] time=1.79, avg_loss=0.0974, train_err=3.1020
+Eval: val_l2=0.0927
+[11] time=1.79, avg_loss=0.0904, train_err=2.8789
+Eval: val_l2=0.0828
+[Rank 0]: saved training state to runs/square_32/_best
+[12] time=1.79, avg_loss=0.0860, train_err=2.7389
+Eval: val_l2=0.0866
+[13] time=1.79, avg_loss=0.0861, train_err=2.7434
+Eval: val_l2=0.0662
+[Rank 0]: saved training state to runs/square_32/_best
+[14] time=1.79, avg_loss=0.0809, train_err=2.5780
+Eval: val_l2=0.0704
+[15] time=1.79, avg_loss=0.0767, train_err=2.4426
+Eval: val_l2=0.0619
+[Rank 0]: saved training state to runs/square_32/_best
+[16] time=1.80, avg_loss=0.0747, train_err=2.3796
+Eval: val_l2=0.0686
+[17] time=1.79, avg_loss=0.0720, train_err=2.2926
+Eval: val_l2=0.0735
+[18] time=1.79, avg_loss=0.0684, train_err=2.1768
+Eval: val_l2=0.0827
+[19] time=1.79, avg_loss=0.0702, train_err=2.2371
+Eval: val_l2=0.0702
+[20] time=1.79, avg_loss=0.0648, train_err=2.0648
+Eval: val_l2=0.0573
+[Rank 0]: saved training state to runs/square_32/_best
+[21] time=1.79, avg_loss=0.0634, train_err=2.0199
+Eval: val_l2=0.0533
+[Rank 0]: saved training state to runs/square_32/_best
+[22] time=1.79, avg_loss=0.0630, train_err=2.0049
+Eval: val_l2=0.0673
+[23] time=1.79, avg_loss=0.0630, train_err=2.0067
+Eval: val_l2=0.0541
+[24] time=1.88, avg_loss=0.0599, train_err=1.9072
+Eval: val_l2=0.0512
+[Rank 0]: saved training state to runs/square_32/_best
+[25] time=1.89, avg_loss=0.0591, train_err=1.8811
+Eval: val_l2=0.0640
+[26] time=1.88, avg_loss=0.0576, train_err=1.8357
+Eval: val_l2=0.0552
+[27] time=1.88, avg_loss=0.0552, train_err=1.7595
+Eval: val_l2=0.0488
+[Rank 0]: saved training state to runs/square_32/_best
+[28] time=1.89, avg_loss=0.0537, train_err=1.7092
+Eval: val_l2=0.0475
+[Rank 0]: saved training state to runs/square_32/_best
+[29] time=1.89, avg_loss=0.0526, train_err=1.6748
+Eval: val_l2=0.0489
+[30] time=1.88, avg_loss=0.0520, train_err=1.6556
+Eval: val_l2=0.0475
+[Rank 0]: saved training state to runs/square_32/_best
+[31] time=1.88, avg_loss=0.0503, train_err=1.6007
+Eval: val_l2=0.0463
+[Rank 0]: saved training state to runs/square_32/_best
+[32] time=1.88, avg_loss=0.0502, train_err=1.5987
+Eval: val_l2=0.0459
+[Rank 0]: saved training state to runs/square_32/_best
+[33] time=1.88, avg_loss=0.0489, train_err=1.5559
+Eval: val_l2=0.0457
+[Rank 0]: saved training state to runs/square_32/_best
+[34] time=1.88, avg_loss=0.0484, train_err=1.5428
+Eval: val_l2=0.0489
+[35] time=1.88, avg_loss=0.0476, train_err=1.5156
+Eval: val_l2=0.0462
+[36] time=1.88, avg_loss=0.0471, train_err=1.5013
+Eval: val_l2=0.0463
+[37] time=1.88, avg_loss=0.0463, train_err=1.4757
+Eval: val_l2=0.0455
+[Rank 0]: saved training state to runs/square_32/_best
+[38] time=1.88, avg_loss=0.0461, train_err=1.4683
+Eval: val_l2=0.0441
+[Rank 0]: saved training state to runs/square_32/_best
+[39] time=1.81, avg_loss=0.0454, train_err=1.4450
+Eval: val_l2=0.0462
+[40] time=1.80, avg_loss=0.0447, train_err=1.4240
+Eval: val_l2=0.0438
+[Rank 0]: saved training state to runs/square_32/_best
+[41] time=1.80, avg_loss=0.0443, train_err=1.4097
+Eval: val_l2=0.0440
+[42] time=1.80, avg_loss=0.0441, train_err=1.4051
+Eval: val_l2=0.0435
+[Rank 0]: saved training state to runs/square_32/_best
+[43] time=1.80, avg_loss=0.0439, train_err=1.3965
+Eval: val_l2=0.0436
+[44] time=1.80, avg_loss=0.0436, train_err=1.3897
+Eval: val_l2=0.0448
+[45] time=1.80, avg_loss=0.0434, train_err=1.3820
+Eval: val_l2=0.0442
+[46] time=1.80, avg_loss=0.0433, train_err=1.3781
+Eval: val_l2=0.0434
+[Rank 0]: saved training state to runs/square_32/_best
+[47] time=1.80, avg_loss=0.0431, train_err=1.3713
+Eval: val_l2=0.0433
+[Rank 0]: saved training state to runs/square_32/_best
+[48] time=1.80, avg_loss=0.0430, train_err=1.3685
+Eval: val_l2=0.0432
+[Rank 0]: saved training state to runs/square_32/_best
+[49] time=1.80, avg_loss=0.0429, train_err=1.3663
+Eval: val_l2=0.0431
+[Rank 0]: saved training state to runs/square_32/_best
+Loaded best-val_l2 weights from runs/square_32/_best/best_model_state_dict.pt.
+Final val metrics (best-checkpoint weights):
+  per_sample_mean_rel_l2   = 0.0431
+  global_rel_l2            = 0.0403
+  mse                      = 0.0001
+  mae                      = 0.0064
+Saved checkpoint to runs/square_32/fno2d.pth
+Saved normalisation stats to runs/square_32/fno2d_stats.npz
+[2026-05-06T00:54:24+01:00] === training done ===

@@ -1,0 +1,56 @@
+# End-to-end smoke test for the neuralop-backed pipeline.
+#
+# Goal: prove that
+#     neuropaths-generate --config configs/smoke_test.yaml --split {train,test}
+#     neuropaths-train    --config configs/smoke_test.yaml
+# completes successfully on Blythe and the FNO is doing useful work
+# (training relative L2 should drop noticeably across 5 epochs even on
+# 20 PDE solutions). Not a benchmark -- numbers will be poor.
+
+name: smoke_test
+output_dir: runs/smoke_test
+
+pde:
+  fine_grid: 311
+  coarse_grid: 32
+  reynolds: 10.0
+  char_length: 0.2
+  viscosity: 1.0
+  domain: square
+  eps_1: 0.0
+  eps_2: 0.0
+
+data:
+  num_train_solutions: 20
+  num_test_solutions: 5
+  train_csv: runs/smoke_test/train.csv
+  test_csv:  runs/smoke_test/test.csv
+  include_finv_column: false
+  batch_size: 4
+  num_workers: 0
+  seed: 2203_2025
+
+model:
+  in_channels: 2        # (b1, b2); neuralop adds (x, y) via grid embedding
+  out_channels: 1
+  modes: 12
+  width: 64             # smaller than dissertation (128) to keep the test fast
+  depth: 4
+  projection_hidden: 64
+  activation: gelu
+
+train:
+  epochs: 5
+  lr: 0.001
+  weight_decay: 0.0
+  loss: relative_l2
+  scheduler: none
+  checkpoint_path: runs/smoke_test/fno2d.pth
+  device: auto
+  deterministic: false
+
+eval:
+  checkpoint_path: runs/smoke_test/fno2d.pth
+  output_dir: runs/smoke_test/eval
+  test_resolutions: [32]
+  num_plot_samples: 2

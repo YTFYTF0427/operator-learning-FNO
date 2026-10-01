@@ -1,0 +1,81 @@
+# Architectural ablation of square_32.yaml that disables neuralop's
+# default channel-MLP / soft-gating pathway and keeps only the
+# original Li et al. 2021 FNO architecture (spectral conv + linear
+# pointwise skip + GELU).
+#
+# Why: with neuralop's defaults, our trained model achieves dissertation
+# parity at the train resolution (G=32 -> global rel L2 = 0.40) and
+# transfers cleanly to G=16 (rel L2 = 0.38), but FAILS at G=63
+# (rel L2 = 0.92). Diagnostic showed:
+#
+#   * The architecture is grid-invariant when freshly initialised --
+#     constant input gives constant output at any G.
+#   * The trained weights are NOT grid-invariant: tracing per-block
+#     activation magnitudes shows the G=63 path shrinking to ~19% of
+#     the G=32 path by block 3.
+#   * The non-spectral pathways (channel MLP, soft-gating skip) are
+#     pointwise so structurally invariant, but during training they
+#     can learn feature interactions that lean on grid-specific
+#     spectral support.
+#
+# This config tests whether stripping those pathways (back to vanilla
+# FNO) restores zero-shot super-resolution.
+
+name: square_32_vanilla
+output_dir: runs/square_32_vanilla
+
+pde:
+  fine_grid: 311
+  coarse_grid: 32
+  reynolds: 10.0
+  char_length: 0.2
+  viscosity: 1.0
+  domain: square
+  eps_1: 0.0
+  eps_2: 0.0
+  velocity_kmin: 1
+  velocity_kmax: 8
+
+data:
+  num_train_solutions: 5000
+  num_test_solutions: 1000
+  train_csv: runs/square_32_vanilla/train.csv
+  test_csv:  runs/square_32_vanilla/test.csv
+  include_finv_column: false
+  batch_size: 32
+  num_workers: 0
+  seed: 2203_2025
+  rho_min_max: 0.05
+  rho_min_l2:  0.0
+  oversample_factor: 2.0
+
+model:
+  in_channels: 2
+  out_channels: 1
+  modes: 12
+  width: 32
+  depth: 4
+  projection_hidden: 64
+  activation: gelu
+  domain_padding: [0.125, 0.0]
+  # Vanilla pathway settings (Li et al. 2021):
+  use_channel_mlp: false      # no per-block channel MLP
+  channel_mlp_skip: none      # irrelevant when use_channel_mlp=false
+  fno_skip: linear            # original W_l pointwise skip per Li et al.
+
+train:
+  epochs: 50
+  lr: 0.001
+  weight_decay: 0.0001
+  loss: h1
+  loss_eps: 0.0
+  scheduler: cosine
+  checkpoint_path: runs/square_32_vanilla/fno2d.pth
+  device: auto
+  deterministic: false
+
+eval:
+  checkpoint_path: runs/square_32_vanilla/fno2d.pth
+  output_dir: runs/square_32_vanilla/eval
+  test_resolutions: [16, 32, 63]
+  num_plot_samples: 3

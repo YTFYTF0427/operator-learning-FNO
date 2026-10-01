@@ -1,0 +1,41 @@
+# Square-domain high-resolution run (s = 63) for Table 1.
+
+name: square_63
+output_dir: runs/square_63
+
+pde:
+  fine_grid: 311
+  coarse_grid: 63
+  reynolds: 10.0
+  char_length: 0.2
+  viscosity: 1.0
+  domain: square
+
+data:
+  num_train_solutions: 1000
+  num_test_solutions: 200
+  train_csv: runs/square_63/train.csv
+  test_csv:  runs/square_63/test.csv
+  include_finv_column: false
+  batch_size: 32
+  seed: 2203_2025
+
+model:
+  in_channels: 2        # (b1, b2); neuralop adds (x, y) via grid embedding
+  out_channels: 1
+  modes: 12
+  width: 128
+  depth: 4
+  projection_hidden: 128
+  activation: gelu
+
+train:
+  epochs: 100          # dissertation actually uses 70 here; adjust if reproducing
+  lr: 0.001
+  loss: relative_l2
+  checkpoint_path: runs/square_63/fno2d.pth
+
+eval:
+  checkpoint_path: runs/square_63/fno2d.pth
+  output_dir: runs/square_63/eval
+  test_resolutions: [16, 32, 63]

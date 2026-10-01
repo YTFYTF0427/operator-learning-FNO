@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/gpfs/home/maths/markhd/neuropaths/.venv/bin/neuropaths-train", line 10, in <module>
+    sys.exit(main())
+             ~~~~^^
+  File "/gpfs/home/maths/markhd/neuropaths/src/neuropaths/cli/train.py", line 35, in main
+    f"Input channel stats (train): mean={train_dataset.stats.mean.tolist()}, "
+                                         ^^^^^^^^^^^^^^^^^^^
+AttributeError: 'CommittorDataset' object has no attribute 'stats'

@@ -1,0 +1,67 @@
+# Square-domain at 32x32 in the *turbulent* velocity regime
+# (Operator_learning_chapter.pdf §2.4: velocity_kmax = 16).
+#
+# Sibling of configs/square_32.yaml -- identical architecture and
+# training knobs, only the velocity-field Fourier-mode cap differs.
+# Use both configs side by side to compare laminar (kmax=8) vs
+# turbulent (kmax=16) operator learnability.
+
+name: square_32_turbulent
+output_dir: runs/square_32_turbulent
+
+pde:
+  fine_grid: 311
+  coarse_grid: 32
+  reynolds: 10.0
+  char_length: 0.2
+  viscosity: 1.0
+  domain: square       # phi = 0, psi = 1 (identity transform)
+  eps_1: 0.0
+  eps_2: 0.0
+  # Turbulent regime: broader Fourier band -> finer-scale velocity
+  # structure -> harder operator (Operator_learning_chapter.pdf §2.4).
+  velocity_kmin: 1
+  velocity_kmax: 16
+
+data:
+  num_train_solutions: 5000
+  num_test_solutions: 1000
+  train_csv: runs/square_32_turbulent/train.csv
+  test_csv:  runs/square_32_turbulent/test.csv
+  include_finv_column: false
+  batch_size: 32
+  num_workers: 0
+  seed: 2203_2025
+  # The turbulent regime has more cases where the corridor is broken
+  # by small-scale eddies, so a slightly larger fraction of draws
+  # produces near-zero rho. Keep the cheap peak filter, no L2 filter.
+  rho_min_max: 0.05
+  rho_min_l2:  0.0
+  oversample_factor: 2.0
+
+model:
+  in_channels: 2        # (b1, b2); neuralop adds (x, y) via grid embedding
+  out_channels: 1
+  modes: 12
+  width: 32
+  depth: 4
+  projection_hidden: 64
+  activation: gelu
+  domain_padding: [0.125, 0.0]
+
+train:
+  epochs: 50
+  lr: 0.001
+  weight_decay: 0.0001
+  loss: h1
+  loss_eps: 0.0
+  scheduler: cosine
+  checkpoint_path: runs/square_32_turbulent/fno2d.pth
+  device: auto
+  deterministic: false
+
+eval:
+  checkpoint_path: runs/square_32_turbulent/fno2d.pth
+  output_dir: runs/square_32_turbulent/eval
+  test_resolutions: [16, 32, 63]
+  num_plot_samples: 3
